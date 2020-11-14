@@ -34,10 +34,13 @@ var matches = patt.exec(runtime);
 var runtimeClean = matches[1];
 
 var title = document.getElementsByTagName("h1")[0].innerText;
-var subtitle = document.querySelector("span.bc-size-medium").innerHTML;
+var subtitle = document.querySelector("span.bc-size-medium");
 
 if (subtitle==null) {
-    subtitle = document.querySelector(".subtitle").innerHTML;
+    subtitle = document.querySelector(".subtitle").innerText;
+}
+else {
+    subtitle = subtitle.innerText;
 }
 if (subtitle) {
     title = title + ": " + subtitle;
