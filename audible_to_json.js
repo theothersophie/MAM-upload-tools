@@ -36,7 +36,7 @@ var runtimeClean = matches[1];
 var title = document.getElementsByTagName("h1")[0].innerText;
 var subtitle = document.querySelector("span.bc-size-medium");
 
-if (subtitle==null) {
+if (subtitle.innerText=="") {
     subtitle = document.querySelector(".subtitle");
 }
 
