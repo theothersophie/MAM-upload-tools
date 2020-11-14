@@ -37,13 +37,13 @@ var title = document.getElementsByTagName("h1")[0].innerText;
 var subtitle = document.querySelector("span.bc-size-medium");
 
 if (subtitle==null) {
-    subtitle = document.querySelector(".subtitle").innerText;
+    subtitle = document.querySelector(".subtitle");
 }
 else {
     subtitle = subtitle.innerText;
 }
 if (subtitle) {
-    title = title + ": " + subtitle;
+    title = title + ": " + subtitle.innerText;
 }
 
 var b = document.querySelector(".bc-image-inset-border").src;
