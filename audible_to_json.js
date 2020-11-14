@@ -33,8 +33,12 @@ var matches = patt.exec(runtime);
 /* The first capture group contains the actual runtime */
 var runtimeClean = matches[1];
 
-var title = document.querySelector(".bc-size-large").innerText;
-var subtitle = document.querySelector(".bc-size-medium").innerHTML;
+var title = document.getElementsByTagName("h1")[0].innerText;
+var subtitle = document.querySelector("span.bc-size-medium").innerHTML;
+
+if (subtitle==null) {
+    subtitle = document.querySelector(".subtitle").innerHTML;
+}
 if (subtitle) {
     title = title + ": " + subtitle;
 }
