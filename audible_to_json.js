@@ -39,7 +39,7 @@ var subtitle = document.querySelector("span.bc-size-medium");
 if (subtitle==null) {
     subtitle = document.querySelector(".subtitle");
 }
-}
+
 if (subtitle) {
     title = title + ": " + subtitle.innerText;
 }
