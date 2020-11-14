@@ -31,7 +31,7 @@ var runtime = document.querySelector(".runtimeLabel").textContent;
 var patt = new RegExp("Length:\n\\s+(\\d[^\n]+)");
 var matches = patt.exec(runtime);
 /* The first capture group contains the actual runtime */
-var runtimeClean = matches[1];
+runtime = matches[1];
 
 var title = document.getElementsByTagName("h1")[0].innerText;
 var sLoggedOut = document.querySelector("span.bc-size-medium");
@@ -58,7 +58,7 @@ var json = "{";
 json += "\"authors\":[" + a + "],";
 json += "\"description\":\"" + d + "\",";
 json += "\"narrators\": [" + n + "],";
-json += "\"tags\":\"" + runtimeClean + ", inAudible, True Decrypt" + "\",";
+json += "\"tags\":\"" + runtime + ", inAudible, True Decrypt" + "\",";
 json += "\"thumbnail\":\"" + b + "\",";
 json += "\"title\":\"" + title + "\"";
 json += "}";
