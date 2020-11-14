@@ -46,7 +46,7 @@ else if (sLoggedOut) {
 }
 
 if (subtitle) {
-    title = title + ": " + subtitle.innerText;
+    title = title + ": " + subtitle;
 }
 
 var b = document.querySelector(".bc-image-inset-border").src;
