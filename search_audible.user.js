@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         MAM Search Audible Button
 // @namespace    https://github.com/theothersophie/MAM-search-audio
+// @downloadURL  https://github.com/theothersophie/MAM-search-audio/raw/main/search_audible.user.js
 // @version      0.1
 // @description  Add a search audible button on the MAM upload page.
 // @author       theothersophie
