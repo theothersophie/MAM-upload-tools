@@ -34,14 +34,19 @@ var matches = patt.exec(runtime);
 var runtimeClean = matches[1];
 
 var title = document.getElementsByTagName("h1")[0].innerText;
-var subtitle = document.querySelector("span.bc-size-medium");
+var sLoggedOut = document.querySelector("span.bc-size-medium");
+var sLoggedIn = document.querySelector(".subtitle");
+var subtitle = "";
 
-if (subtitle==null) {
-    subtitle = document.querySelector(".subtitle");
+if (sLoggedIn) {
+    subtitle = sLoggedIn.innerText;
+}
+else if (sLoggedOut) {
+    subtitle = sLoggedOut.innerText;
 }
 
 if (subtitle) {
-    if (subtitle.innerText) {title = title + ": " + subtitle.innerText;}
+    title = title + ": " + subtitle.innerText;
 }
 
 var b = document.querySelector(".bc-image-inset-border").src;
