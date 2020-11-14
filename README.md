@@ -8,4 +8,4 @@ Add a search audible button on the MAM upload page.
 
 ## audible_to_json.js
 
-Automatically generate JSON string from audiobook page.
+Automatically generate JSON string from audiobook page. See thread for tutorial.
