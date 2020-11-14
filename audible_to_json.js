@@ -49,7 +49,17 @@ if (subtitle) {
     title = title + ": " + subtitle;
 }
 
-var c = document.querySelector(".categoriesLabel");
+var cOut = document.querySelector(".categoriesLabel");
+var cIn = document.querySelector("nav.bc-breadcrumb");
+var c;
+
+if (cOut) {
+    c = cOut;
+}
+else if (cIn) {
+    c = cIn;
+}
+
 var categories = c.innerText;
 
 var b = document.querySelector(".bc-image-inset-border").src;
