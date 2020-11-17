@@ -15,16 +15,14 @@ function copyHelper(e) {
 var authorElements = document.querySelectorAll(".authorLabel a");
 var authors = [];
 for (let index = 0; index < authorElements.length; index++) {
-    authors[index] = "\""+ authorElements[index].innerHTML + "\"";
+    authors[index] = authorElements[index].innerHTML;
 }
-var a = authors.join(", ");
 
 var narratorElements = document.querySelectorAll(".narratorLabel a");
 var narrators = [];
 for (let index = 0; index < narratorElements.length; index++) {
-    narrators[index] = "\""+ narratorElements[index].innerHTML + "\"";
+    narrators[index] = narratorElements[index].innerHTML;
 }
-var n = narrators.join(", ");
 
 var runtime = document.querySelector(".runtimeLabel").textContent;
 /* clean up unnecessary parts of string */
@@ -37,14 +35,12 @@ var title = document.getElementsByTagName("h1")[0].innerText;
 var sLoggedOut = document.querySelector("span.bc-size-medium");
 var sLoggedIn = document.querySelector(".subtitle");
 var subtitle = "";
-
 if (sLoggedIn) {
     subtitle = sLoggedIn.innerText;
 }
 else if (sLoggedOut) {
     subtitle = sLoggedOut.innerText;
 }
-
 if (subtitle) {
     title = title + ": " + subtitle;
 }
@@ -67,12 +63,17 @@ var d = document.querySelector(".productPublisherSummary>div>div>span").innerHTM
 /* In order: Remove excess whitespace, replace double quotes, add line break after every paragraph, and every list */
 d = d.replace(/\s+/g, " ").replace(/"/g, '\\"').replace(/<\/p>/g,"</p><br>").replace(/<\/ul>/g, "</ul><br>");
 
-var json = "{";
-json += "\"authors\":[" + a + "],";
-json += "\"description\":\"" + d + "\",";
-json += "\"narrators\": [" + n + "],";
-json += "\"tags\":\"" + "Length: " + runtime + ", inAudible, True Decrypt, " + categories + "\",";
-json += "\"thumbnail\":\"" + b + "\",";
-json += "\"title\":\"" + title + "\"";
-json += "}";
-copy(json);
+var tags = "Length: " + runtime + ", inAudible, True Decrypt, " + categories;
+
+var json = {
+    "authors" : authors,
+    "description": d,
+    "narrators": narrators,
+    "tags": tags,
+    "thumbnail": b,
+    "title": title
+};
+
+var strJson = JSON.stringify(json);
+
+copy(strJson);
