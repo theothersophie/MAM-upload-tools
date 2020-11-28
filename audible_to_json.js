@@ -56,7 +56,7 @@ else if (cIn) {
     c = cIn;
 }
 
-var categories = c.innerText;
+if (c) var categories = c.innerText;
 
 var b = document.querySelector(".bc-image-inset-border").src;
 var d = document.querySelector(".productPublisherSummary>div>div>span").innerHTML;
