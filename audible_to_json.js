@@ -64,7 +64,7 @@ var d = document.querySelector(".productPublisherSummary>div>div>span").innerHTM
 /* In order: Remove excess whitespace, replace double quotes, add line break after every paragraph, and every list */
 d = d.replace(/\s+/g, " ").replace(/"/g, '\\"').replace(/<\/p>/g,"</p><br>").replace(/<\/ul>/g, "</ul><br>");
 
-var tags = "Duration: " + runtime + ", inAudible True Decrypt, " + categories;
+var tags = "Duration: " + runtime + ". inAudible True Decrypt. " + categories;
 
 var json = {
     "authors" : authors,
