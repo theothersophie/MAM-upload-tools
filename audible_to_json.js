@@ -15,7 +15,7 @@ function copyHelper(e) {
 var authorElements = document.querySelectorAll(".authorLabel a");
 var authors = [];
 for (let index = 0; index < authorElements.length; index++) {
-    authors[index] = authorElements[index].innerHTML;
+    authors[index] = authorElements[index].innerHTML.replace(/ - (foreword|afterword|translator)/gi,"");
 }
 
 var narratorElements = document.querySelectorAll(".narratorLabel a");
